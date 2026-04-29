@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chuku Memories — A Tribute to Us</title>
+  <meta name="description" content="A personal digital repository of memories. For Chukka, and for us.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="hogwarts.css">
+
+  <style>
+    /* Landing-specific extras */
+    .chukku-masonry {
+      padding: 0 1.5rem 5rem;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ░░░ NAVBAR ░░░ -->
+  <nav class="navbar" id="navbar">
+    <span class="nav-brand">chuku.memories</span>
+    <span style="font-size:0.82rem;color:var(--charcoal-soft);letter-spacing:0.08em;">🌿 A Memory Repository</span>
+  </nav>
+
+  <!-- ░░░ HERO ░░░ -->
+  <section class="hero">
+    <div class="hero-decor d1"></div>
+    <div class="hero-decor d2"></div>
+    <div class="hero-decor d3"></div>
+
+    <!-- Chukka Logo -->
+    <div class="logo-ring reveal" id="logo-ring">
+      <img id="chukka-logo" class="logo-img" src="chukku.jpeg" alt="Chukka the Dog" />
+    </div>
+
+    <h1 class="site-title reveal">chuku.memories</h1>
+    <p class="site-subtitle reveal">A personal digital repository &nbsp;·&nbsp; For Chukka, and for us</p>
+
+    <!-- Introductory Letter -->
+    <div class="letter-card glass reveal">
+      <p class="letter-text">
+        Hi guys,
+        <br><br>
+        Welcome to my small project. I don't know if it's a hit or miss, I guess if you are reading this, I am
+        considering it as a hit.
+        This is supposed to be a token of gift for you and me. I am keeping this as a repository which can be renewed
+        every time, we hangout together.
+        I hope you like it. Let's continue to explore and enjoy life.
+      </p>
+      <p class="letter-sign">Best, The Chukka Team 🐾</p>
+    </div>
+  </section>
+
+  <!-- ░░░ CHUKKU'S GALLERY ░░░ -->
+  <section class="mt-section chukku-masonry">
+    <div class="section-header reveal">
+      <span class="section-label">🐾 Our Little attention seeker</span>
+      <h2 class="section-title">Chukka's Gallery</h2>
+      <span class="section-rule"></span>
+    </div>
+
+    <div class="masonry-grid" id="chukku-masonry">
+      <!-- Populated by JS from data.js -->
+    </div>
+
+    <!-- Empty state shown when no chukku images in data.js -->
+    <div class="empty-state" id="chukku-empty" style="display:none;">
+      <div class="empty-state-title">Chukka's photos coming soon 🐾</div>
+      <p>Add Chukka's images to <strong>data.js</strong> with <code>person: "chukku"</code></p>
+      <span class="empty-state-code">{ id: "YOUR_FILE_ID", type: "image", person: "chukku", ... }</span>
+    </div>
+  </section>
+
+  <!-- ░░░ VIDEO SECTION ░░░ -->
+  <section class="video-section" id="videos">
+    <div class="section-header reveal">
+      <span class="section-label">🎬 Moving Memories</span>
+      <h2 class="section-title" style="color:var(--white);">Video Gallery</h2>
+      <span class="section-rule"></span>
+    </div>
+
+    <div class="video-grid" id="video-grid">
+      <!-- Populated by JS -->
+    </div>
+
+    <!-- Empty state -->
+    <div id="video-empty" style="display:none; text-align:center; padding: 3rem 0;">
+      <div class="video-placeholder"
+        style="max-width:420px; margin:0 auto; border-radius:16px; border: 2px dashed rgba(255,255,255,0.2);">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+          <polygon points="5 3 19 12 5 21 5 3"></polygon>
+        </svg>
+        <p
+          style="color:rgba(255,255,255,0.55); font-style:italic; font-size:0.95rem; max-width:300px; line-height:1.7;">
+          Video memories will appear here once added to <strong>data.js</strong> with <code>type: "video"</code>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░░ THE WORLDS (Friend Portals) ░░░ -->
+  <section style="padding: 5rem 1.5rem 2rem;" id="worlds">
+    <div class="section-header reveal">
+      <span class="section-label">🌿 The Worlds</span>
+      <h2 class="section-title">Choose Your Portal</h2>
+      <span class="section-rule"></span>
+      <p style="color:var(--charcoal-soft); margin-top:1rem; font-size:0.97rem;">Each circle is a doorway to someone's
+        story.</p>
+    </div>
+
+    <div class="portals-grid reveal-stagger" id="portals-grid">
+      <!-- Populated by JS -->
+    </div>
+  </section>
+
+  <!-- ░░░ FOOTER ░░░ -->
+  <footer class="site-footer">
+    <span class="footer-brand">chuku.memories</span>
+    <p>Made with 🐾 love &nbsp;·&nbsp; &copy; The Chukka Team</p>
+  </footer>
+
+  <!-- ░░░ LIGHTBOX ░░░ -->
+  <div class="lightbox-overlay" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightbox-close" aria-label="Close">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <img id="lightbox-img" src="" alt="Memory" />
+      <div class="lightbox-caption" id="lightbox-caption"></div>
+    </div>
+  </div>
+
+  <!-- ░░░ SCRIPTS ░░░ -->
+  <script src="data.js"></script>
+  <script>
+    /* ---- Navbar scroll effect ---- */
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+    /* ---- Scroll-reveal ---- */
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          revealObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+
+    document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => revealObserver.observe(el));
+
+    /* ---- Masonry item scroll-reveal ---- */
+    const masonryObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          masonryObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
+
+    /* ---- Portal definitions ---- */
+    const PORTALS = [
+      { person: 'palak', label: 'Palak', page: 'palak.html', count: 68 },
+      { person: 'kun', label: 'Kun', page: 'kun.html', count: 59 },
+      { person: 'sumi', label: 'Sumi', page: 'sumi.html', count: 157 },
+      { person: 'anu', label: 'Anu', page: 'anu.html', count: 71 },
+    ];
+
+    /* ---- Render Portals ---- */
+    function renderPortals() {
+      const grid = document.getElementById('portals-grid');
+      grid.innerHTML = '';
+
+      PORTALS.forEach(p => {
+        const iconId = PORTAL_ICONS[p.person];
+        const imgSrc = iconId
+          ? driveImg(iconId)
+          : `https://placehold.co/160x160/ddecd5/2d5a27?text=${p.label}`;
+
+        const a = document.createElement('a');
+        a.href = p.page;
+        a.className = 'portal-link';
+        const houseMap = { palak: 'slytherin', kun: 'ravenclaw', sumi: 'hufflepuff', anu: 'gryffindor' };
+        a.setAttribute('data-house', houseMap[p.person] || '');
+        a.setAttribute('aria-label', `Enter ${p.label}'s world`);
+        a.innerHTML = `
+          <div class="portal-circle">
+            <div class="portal-glow"></div>
+            <img src="${imgSrc}"
+                 alt="${p.label}'s portal"
+                 loading="lazy"
+                 onerror="this.src='https://placehold.co/160x160/ddecd5/2d5a27?text=${p.label}'"
+            />
+          </div>
+          <span class="portal-name">${p.label}</span>
+          <span class="portal-count">${p.count} memories</span>
+        `;
+        grid.appendChild(a);
+      });
+
+      // Re-observe for stagger animation
+      revealObserver.observe(grid);
+    }
+
+    /* ---- Render Chukku Masonry ---- */
+    function renderChukkuMasonry() {
+      const grid = document.getElementById('chukku-masonry');
+      const empty = document.getElementById('chukku-empty');
+      const chukku = getMedia('chukku');
+
+      if (chukku.length === 0) {
+        grid.style.display = 'none';
+        empty.style.display = 'block';
+        return;
+      }
+
+      grid.innerHTML = '';
+      chukku.forEach((item, i) => {
+        if (item.type === 'video') return; // skip videos in photo grid
+        const div = document.createElement('div');
+        div.className = 'masonry-item';
+        div.style.transitionDelay = `${(i % 8) * 0.06}s`;
+        div.innerHTML = `
+          <img src="${driveImg(item.id)}"
+               alt="${item.title || 'Chukka memory'}"
+               loading="lazy"
+               onerror="this.parentElement.style.display='none'"
+          />
+          <div class="masonry-caption">
+            ${item.title ? `<div class="masonry-caption-title">${item.title}</div>` : ''}
+            ${item.date ? `<div class="masonry-caption-date">${formatDate(item.date)}</div>` : ''}
+          </div>
+        `;
+        div.addEventListener('click', () => openLightbox(driveImg(item.id), item.title, item.date));
+        grid.appendChild(div);
+        masonryObserver.observe(div);
+      });
+    }
+
+    /* ---- Render Videos ---- */
+    function renderVideos() {
+      const grid = document.getElementById('video-grid');
+      const empty = document.getElementById('video-empty');
+      const vids = MEDIA.filter(m => m.type === 'video');
+
+      if (vids.length === 0) {
+        grid.style.display = 'none';
+        empty.style.display = 'block';
+        return;
+      }
+
+      grid.innerHTML = '';
+      vids.forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'video-card';
+        card.innerHTML = `
+          <iframe
+            src="${driveVideo(item.id)}"
+            title="${item.title || 'Memory video'}"
+            allow="autoplay"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
+          <div class="video-card-info">
+            ${item.title ? `<div class="video-card-title">${item.title}</div>` : ''}
+            ${item.date ? `<div class="video-card-date">${formatDate(item.date)}</div>` : ''}
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    /* ---- Lightbox ---- */
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    const lightboxClose = document.getElementById('lightbox-close');
+
+    function openLightbox(src, title, date) {
+      lightboxImg.src = src;
+      lightboxCaption.innerHTML = [title, date ? formatDate(date) : ''].filter(Boolean).join(' &nbsp;·&nbsp; ');
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+      setTimeout(() => { lightboxImg.src = ''; }, 350);
+    }
+
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+    /* ---- Date formatter ---- */
+    function formatDate(d) {
+      if (!d) return '';
+      try {
+        return new Date(d + 'T00:00:00').toLocaleDateString('en-IN', { year: 'numeric', month: 'long', day: 'numeric' });
+      } catch { return d; }
+    }
+
+    /* ---- Init ---- */
+    renderPortals();
+    renderChukkuMasonry();
+    renderVideos();
+
+    // Trigger logo ring reveal
+    requestAnimationFrame(() => {
+      setTimeout(() => document.getElementById('logo-ring').classList.add('visible'), 100);
+    });
+  </script>
+
+</body>
+
+</html>

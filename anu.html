@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anu's World â€” chuku.memories</title>
+  <meta name="description" content="71 memories with Anu.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- â–‘â–‘â–‘ NAVBAR â–‘â–‘â–‘ -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="nav-back">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+      Back Home
+    </a>
+    <span class="nav-brand">chuku.memories</span>
+  </nav>
+
+  <!-- â–‘â–‘â–‘ WORLD HERO â–‘â–‘â–‘ -->
+  <section class="world-hero">
+    <div class="world-hero-bg"></div>
+    <div class="hero-decor d1"></div>
+    <div class="hero-decor d2"></div>
+
+    <div class="world-portrait-ring reveal">
+      <img src="Anu.jpeg" alt="Anu"
+        onerror="this.src='https://placehold.co/160x160/ddecd5/2d5a27?text=Anu'" />
+    </div>
+
+    <h1 class="world-title reveal">Anu's World</h1>
+    <p class="world-tagline reveal">71 moments that speak louder than words.</p>
+    <span class="world-count-badge reveal" id="anu-count-badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+        <circle cx="8.5" cy="8.5" r="1.5"></circle>
+        <polyline points="21 15 16 10 5 21"></polyline>
+      </svg>
+      71 Memories
+    </span>
+  </section>
+
+  <!-- â–‘â–‘â–‘ PLACEHOLDER MESSAGE â–‘â–‘â–‘ -->
+  <section style="padding: 0 1.5rem;">
+    <div class="message-placeholder glass reveal">
+      <div class="placeholder-icon">ðŸŒ¿</div>
+      <p class="placeholder-text">
+        Dear Anu, <br>
+        I hope you won't mind for calling you that. I recieved your letter, I understand why you wanted me to stay and
+        trust me even I wanted to.<br>
+        But the thing is no amount of more time, will make this separation, less painful.<br>. So, lets just expect it.
+        Anyways, what I wanted to say was, your kindness is something which doesn't come with any conditions, and that's
+        what
+        I worries the most. Its easier for people to take advantage of you, and so once I thought that I would have
+        stopped you from doing some
+        friendship, although you know whom I am talking about. And people say that "don't cross oceans for someone, who
+        won't even cross a puddle for you".
+        But you know what there is another saying that says cross the oceans, give your heart, love with everything you
+        got. Its such a blessing
+        to give that much amount of love to anyone. And honestly being someone who has experienced it, please keep doing
+        so. I would pray that you are
+        surrounded by good people. Because tm toh sahi aadami nhi hi pehchan paaogi, bharosa h mujhe. <br>
+        Love,<br>
+        Akanksha<br>
+      </p>
+    </div>
+  </section>
+
+  <!-- â–‘â–‘â–‘ ANU'S MASONRY GALLERY â–‘â–‘â–‘ -->
+  <section class="masonry-section" style="padding-top: 2rem;">
+    <div class="section-header reveal">
+      <span class="section-label">ðŸ“¸ In Chronological Order</span>
+      <h2 class="section-title">The Story in Photos</h2>
+      <span class="section-rule"></span>
+    </div>
+
+    <div class="masonry-grid" id="anu-masonry"></div>
+
+    <div class="empty-state" id="anu-empty" style="display:none;">
+      <div class="empty-state-title">Anu's photos coming soon ðŸŒ¿</div>
+      <p>Add photos to <strong>data.js</strong> with <code>person: "anu"</code></p>
+      <span class="empty-state-code">{ id: "FILE_ID", type: "image", person: "anu", date: "YYYY-MM-DD", ... }</span>
+    </div>
+  </section>
+
+  <!-- â–‘â–‘â–‘ FOOTER â–‘â–‘â–‘ -->
+  <footer class="site-footer">
+    <span class="footer-brand">chuku.memories</span>
+    <p>Made with love &nbsp;Â·&nbsp; <a href="index.html" style="color:var(--forest-mid);text-decoration:none;">â† Back
+        to Home</a></p>
+  </footer>
+
+  <!-- â–‘â–‘â–‘ LIGHTBOX â–‘â–‘â–‘ -->
+  <div class="lightbox-overlay" id="lightbox" role="dialog" aria-modal="true">
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightbox-close" aria-label="Close">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <img id="lightbox-img" src="" alt="Memory" />
+      <div class="lightbox-caption" id="lightbox-caption"></div>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="world.js"></script>
+  <script>initWorldPage('anu');</script>
+
+</body>
+
+</html>

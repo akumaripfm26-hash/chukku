@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Merriweather:ital,wght@0,300;0,400;1,300&display=swap');
+
+/* ── DARK MAGIC TOKENS ─────────────────────────────── */
+:root {
+  --forest-deep:   #0a0a0f;
+  --forest-mid:    #c9a84c;
+  --forest-light:  #e8c96a;
+  --forest-pale:   #d4b86a;
+  --sage:          #8b7355;
+  --sage-light:    #c9a84c;
+  --sage-mist:     #2a2015;
+  --cream:         #0f0e0c;
+  --cream-warm:    #1a1611;
+  --cream-card:    #141210;
+  --earth-brown:   #c9a84c;
+  --earth-mid:     #e8c96a;
+  --charcoal:      #e8dcc8;
+  --charcoal-mid:  #c9b99a;
+  --charcoal-soft: #9a8a6a;
+  --white:         #f5e6c8;
+  --shadow-card:   0 4px 24px rgba(0,0,0,.65), 0 1px 4px rgba(0,0,0,.45);
+  --shadow-hover:  0 16px 48px rgba(201,168,76,.28), 0 4px 12px rgba(0,0,0,.55);
+  --shadow-glass:  0 8px 32px rgba(0,0,0,.55), inset 0 1px 0 rgba(201,168,76,.12);
+  --font-serif:    'Cinzel', Georgia, serif;
+  --font-sans:     'Merriweather', Georgia, serif;
+}
+
+/* ── BASE ───────────────────────────────────────────── */
+body { background:#0a0a0f; }
+body::before { display:none; }
+
+/* ── HERO ───────────────────────────────────────────── */
+.hero {
+  background: url('hogwarts_bg.png') center/cover no-repeat fixed;
+  position: relative;
+}
+.hero::after {
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to bottom, rgba(5,4,3,.78) 0%, rgba(10,8,6,.88) 100%);
+  pointer-events:none;
+  z-index:0;
+}
+.hero > * { position:relative; z-index:1; }
+.hero-decor { display:none; }
+
+/* ── LOGO ───────────────────────────────────────────── */
+@keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+.logo-ring { animation:float 5s ease-in-out infinite; }
+.logo-img {
+  border:3px solid #c9a84c;
+  box-shadow:0 0 30px rgba(201,168,76,.5), 0 0 70px rgba(201,168,76,.18);
+}
+.logo-ring::before, .logo-ring::after { border-color:rgba(201,168,76,.35); }
+
+/* ── GLASS ──────────────────────────────────────────── */
+.glass {
+  background:rgba(12,10,7,.78);
+  border-color:rgba(201,168,76,.18);
+  box-shadow:var(--shadow-glass);
+}
+
+/* ── LETTER ─────────────────────────────────────────── */
+.letter-card { border-left-color:#c9a84c; }
+.letter-card::before { color:#c9a84c; }
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+.navbar.scrolled {
+  background:rgba(6,5,3,.92);
+  box-shadow:0 2px 24px rgba(0,0,0,.55), 0 1px 0 rgba(201,168,76,.15);
+}
+
+/* ── SECTION DECORATION ─────────────────────────────── */
+.section-rule { background:linear-gradient(90deg,#c9a84c,transparent); }
+
+/* ── MASONRY — VINTAGE PORTRAIT FRAMES ──────────────── */
+.masonry-item {
+  border:2px solid rgba(201,168,76,.22);
+  border-radius:4px;
+  box-shadow:0 4px 24px rgba(0,0,0,.75), inset 0 0 20px rgba(0,0,0,.3);
+  position:relative;
+}
+.masonry-item::before {
+  content:'';
+  position:absolute;
+  inset:5px;
+  border:1px solid rgba(201,168,76,.14);
+  border-radius:2px;
+  pointer-events:none;
+  z-index:2;
+}
+.masonry-item:hover {
+  box-shadow:0 0 28px rgba(201,168,76,.3), 0 16px 48px rgba(0,0,0,.8);
+  transform:translateY(-5px) scale(1.01);
+}
+.masonry-caption {
+  background:linear-gradient(to top, rgba(5,3,2,.88), transparent);
+}
+
+/* ── VIDEO SECTION ──────────────────────────────────── */
+.video-section { background:linear-gradient(135deg,#050403 0%,#0f0a06 60%,#060504 100%); }
+.video-card { border-color:rgba(201,168,76,.18); background:rgba(201,168,76,.03); }
+
+/* ── PORTALS — HOUSE COLOURS ────────────────────────── */
+/* Palak → Slytherin */
+.portal-link[data-house="slytherin"] .portal-circle { border-color:#2d7a4a; }
+.portal-link[data-house="slytherin"]:hover .portal-circle {
+  border-color:#50c878;
+  box-shadow:0 0 28px rgba(45,140,78,.7), 0 16px 40px rgba(0,0,0,.5);
+  transform:translateY(-10px) scale(1.04);
+}
+.portal-link[data-house="slytherin"]:hover .portal-name { color:#50c878; }
+
+/* Kun → Ravenclaw */
+.portal-link[data-house="ravenclaw"] .portal-circle { border-color:#1e3a8a; }
+.portal-link[data-house="ravenclaw"]:hover .portal-circle {
+  border-color:#6495ed;
+  box-shadow:0 0 28px rgba(30,58,138,.75), 0 16px 40px rgba(0,0,0,.5);
+  transform:translateY(-10px) scale(1.04);
+}
+.portal-link[data-house="ravenclaw"]:hover .portal-name { color:#8ab4f8; }
+
+/* Sumi → Hufflepuff */
+.portal-link[data-house="hufflepuff"] .portal-circle { border-color:#8b6a14; }
+.portal-link[data-house="hufflepuff"]:hover .portal-circle {
+  border-color:#ffd700;
+  box-shadow:0 0 28px rgba(255,215,0,.6), 0 16px 40px rgba(0,0,0,.5);
+  transform:translateY(-10px) scale(1.04);
+}
+.portal-link[data-house="hufflepuff"]:hover .portal-name { color:#ffd700; }
+
+/* Anu → Gryffindor */
+.portal-link[data-house="gryffindor"] .portal-circle { border-color:#7b1a1a; }
+.portal-link[data-house="gryffindor"]:hover .portal-circle {
+  border-color:#e03030;
+  box-shadow:0 0 28px rgba(200,30,30,.7), 0 16px 40px rgba(0,0,0,.5);
+  transform:translateY(-10px) scale(1.04);
+}
+.portal-link[data-house="gryffindor"]:hover .portal-name { color:#e88080; }
+
+/* ── WORLD PAGE HOUSE BACKGROUNDS ───────────────────── */
+body.house-slytherin {
+  background:radial-gradient(ellipse 70% 50% at 20% 10%,#071a0e 0%,#040a06 70%,#020403 100%);
+}
+body.house-ravenclaw {
+  background:radial-gradient(ellipse 70% 50% at 20% 10%,#050d20 0%,#030509 70%,#020304 100%);
+}
+body.house-hufflepuff {
+  background:radial-gradient(ellipse 70% 50% at 20% 10%,#1a1306 0%,#0a0804 70%,#050402 100%);
+}
+body.house-gryffindor {
+  background:radial-gradient(ellipse 70% 50% at 20% 10%,#1f0606 0%,#0a0303 70%,#050202 100%);
+}
+
+/* Portrait ring house glows */
+body.house-slytherin .world-portrait-ring { box-shadow:0 0 0 4px #2d7a4a, 0 0 30px rgba(45,122,74,.5); }
+body.house-ravenclaw .world-portrait-ring { box-shadow:0 0 0 4px #1e3a8a, 0 0 30px rgba(30,58,138,.55); }
+body.house-hufflepuff .world-portrait-ring { box-shadow:0 0 0 4px #c9a84c, 0 0 30px rgba(201,168,76,.55); }
+body.house-gryffindor .world-portrait-ring { box-shadow:0 0 0 4px #7b1a1a, 0 0 30px rgba(180,30,30,.55); }
+
+/* Accent rules per house */
+body.house-slytherin .section-rule  { background:linear-gradient(90deg,#2d7a4a,transparent); }
+body.house-ravenclaw .section-rule  { background:linear-gradient(90deg,#4169e1,transparent); }
+body.house-hufflepuff .section-rule { background:linear-gradient(90deg,#ffd700,transparent); }
+body.house-gryffindor .section-rule { background:linear-gradient(90deg,#c0392b,transparent); }
+
+body.house-slytherin .personal-letter  { border-left-color:#2d7a4a; }
+body.house-ravenclaw .personal-letter  { border-left-color:#4169e1; }
+body.house-hufflepuff .personal-letter { border-left-color:#c9a84c; }
+body.house-gryffindor .personal-letter { border-left-color:#c0392b; }
+
+/* ── WORLD HERO BG ──────────────────────────────────── */
+.world-hero { background:#0a0a0f; }
+.world-hero-bg {
+  background:linear-gradient(160deg,rgba(201,168,76,.06) 0%,transparent 55%);
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.site-footer { border-top-color:rgba(201,168,76,.14); }
+.footer-brand { color:#c9a84c; }
+
+/* ── LIGHTBOX ───────────────────────────────────────── */
+.lightbox-overlay { background:rgba(4,3,2,.94); }
+
+/* ── NAV BACK ───────────────────────────────────────── */
+.nav-back { color:#c9a84c; }
+.nav-back:hover { border-color:#c9a84c; background:rgba(201,168,76,.06); }

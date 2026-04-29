@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Palak's World â€” chuku.memories</title>
+  <meta name="description" content="68 memories. The story of knowing Arushi and calling her Palak.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="hogwarts.css">
+</head>
+<body class="house-slytherin">
+
+  <!-- â–‘â–‘â–‘ NAVBAR â–‘â–‘â–‘ -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="nav-back" aria-label="Back to home">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+      Back Home
+    </a>
+    <span class="nav-brand">chuku.memories</span>
+  </nav>
+
+  <!-- â–‘â–‘â–‘ WORLD HERO â–‘â–‘â–‘ -->
+  <section class="world-hero">
+    <div class="world-hero-bg"></div>
+
+    <!-- Decorative orbs -->
+    <div class="hero-decor d1"></div>
+    <div class="hero-decor d2"></div>
+
+    <div class="world-portrait-ring reveal">
+      <img
+        id="palak-portrait"
+        src="palak.jpeg"
+        alt="Palak"
+        onerror="this.src='https://placehold.co/160x160/ddecd5/2d5a27?text=Palak'"
+      />
+    </div>
+
+    <h1 class="world-title reveal">Palak's World</h1>
+    <p class="world-tagline reveal">68 memories that weave the story of Arushi to Palak.</p>
+    <span class="world-count-badge reveal" id="palak-count-badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+        <circle cx="8.5" cy="8.5" r="1.5"></circle>
+        <polyline points="21 15 16 10 5 21"></polyline>
+      </svg>
+      68 Memories
+    </span>
+  </section>
+
+  <!-- â–‘â–‘â–‘ PERSONAL LETTER â–‘â–‘â–‘ -->
+  <section style="padding: 0 1.5rem;">
+    <div class="personal-letter glass reveal">
+      <div class="letter-header">
+        <div class="letter-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </div>
+        <div>
+          <div class="letter-from">A letter from the Chukka Team</div>
+          <div class="letter-to">To Arushi (a.k.a. Palak)</div>
+        </div>
+      </div>
+
+      <div class="letter-body">
+        <p>Hi, this section is for you, it contains all photos which tell the story of knowing you as Arushi to calling you as Palak.</p>
+          <p>Honestly, I don't know where to start from, because there are so many things which I want to say and share with you, but I will try to keep it as much concise as possible. So, here it goes...</p>
+          <p>At first, I didn't think we would be friends. Tu Anushka CTF mein the aur dogs ki baatein karte the, aur main relate nahi kar paa raha tha. So mujhe laga apn dost nahi ban paayenge. But I guess being in Section 1, and QT did some ice breaking.</p>
+         Ohh, trekking kaise bhul skte h mid ke ek din pehle.I know ki it's a bit cliche but still let me tell you in my words, you are an amazing person, a very fun person to hang out with, the most adventurous kind, the very "chal dete h" kind. 
+          <br> But I wish you were a bit more sharing with us, not as in gossips or tea, but your problems and doubts. Just don't sit with your problems alone. Hm jyada solution toh de nahi paayenge but still hm tera saath baith ke mann halka kar skte h.<br> 
+          Tujhe hm sirf khush dekhna chahte h be it anyone or anything in your life, don't deal with it alone. I know ki tu Nero ke wajah se hamare saath nahi rehti, but still the bond remains the same.</p>
+          <br> Anyways, hope that you achieve everything you desire. And one more important thing, phone phek mt diya kr yaar kaise baat karenge tujhse</p>
+          <p>Love,</p>
+          <p>Akanksha</p>
+          <br> (PS: I forgot to thank you for all the rides, especially the last one. And also tell me why does this name suits you more.)
+      </div>
+    </div>
+  </section>
+
+  <!-- â–‘â–‘â–‘ PALAK'S MASONRY GALLERY â–‘â–‘â–‘ -->
+  <section class="masonry-section" style="padding-top: 2rem;">
+    <div class="section-header reveal">
+      <span class="section-label">The Story in Photos</span>
+    
+      <span class="section-rule"></span>
+    </div>
+
+    <div class="masonry-grid" id="palak-masonry"></div>
+
+    <div class="empty-state" id="palak-empty" style="display:none;">
+      <div class="empty-state-title"></div>
+      <p>Add photos to <strong>data.js</strong> with <code>person: "palak"</code></p>
+      <span class="empty-state-code">{ id: "FILE_ID", type: "image", person: "palak", date: "YYYY-MM-DD", ... }</span>
+    </div>
+  </section>
+
+  <!-- â–‘â–‘â–‘ FOOTER â–‘â–‘â–‘ -->
+  <footer class="site-footer">
+    <span class="footer-brand">chuku.memories</span>
+    <p>Made with love &nbsp;&nbsp; <a href="index.html" style="color:var(--forest-mid);text-decoration:none;"> Back to Home</a></p>
+  </footer>
+
+  <!-- â–‘â–‘â–‘ LIGHTBOX â–‘â–‘â–‘ -->
+  <div class="lightbox-overlay" id="lightbox" role="dialog" aria-modal="true">
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightbox-close" aria-label="Close">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <img id="lightbox-img" src="" alt="Memory" />
+      <div class="lightbox-caption" id="lightbox-caption"></div>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="world.js"></script>
+  <script>
+    initWorldPage('palak');
+  </script>
+
+</body>
+</html>
+
+

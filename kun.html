@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kun's World ||chuku.memories</title>
+  <meta name="description" content="59 memories with Kun.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="hogwarts.css">
+</head>
+<body class="house-ravenclaw">
+
+  <!-- â–‘â–‘â–‘ NAVBAR â–‘â–‘â–‘ -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="nav-back">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+      Back Home
+    </a>
+    <span class="nav-brand">chuku.memories</span>
+  </nav>
+
+  <!-- â–‘â–‘â–‘ WORLD HERO â–‘â–‘â–‘ -->
+  <section class="world-hero">
+    <div class="world-hero-bg"></div>
+    <div class="hero-decor d1"></div>
+    <div class="hero-decor d2"></div>
+
+    <div class="world-portrait-ring reveal">
+      <img
+        src="Kun.jpeg"
+        alt="Kun"
+        onerror="this.src='https://placehold.co/160x160/ddecd5/2d5a27?text=Kun'"
+      />
+    </div>
+
+    <h1 class="world-title reveal">Kun's World</h1>
+    <p class="world-tagline reveal">59 moments worth remembering.</p>
+    <span class="world-count-badge reveal" id="kun-count-badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+        <circle cx="8.5" cy="8.5" r="1.5"></circle>
+        <polyline points="21 15 16 10 5 21"></polyline>
+      </svg>
+      59 Memories
+    </span>
+  </section>
+
+  <!-- â–‘â–‘â–‘ PLACEHOLDER MESSAGE â–‘â–‘â–‘ -->
+  <section style="padding: 0 1.5rem;">
+    <div class="message-placeholder glass reveal">
+      
+      <p class="placeholder-text">
+        Dear Kun, <br>
+       <p>I know I have said it 10 times, but still ek aur baar bolti hu, teri dp aur tu real life mei bahut alag lagi thi meko. 
+       Fir toh mai ghar hi chali gayi thi 10 din k liye. And tu aur shatakshi close ho gaye the, phir mai 10 din k baad aayi toh mujhe lga ki apn log toh saath ho hi nhi paayenge. You know ki mujhe shatakshi se vibes acchi nhi aati thi toh I was quite around u as well. 
+       But honestly whatever was our ice breaker, I don't know ki dheere dheere hua yaa ekdm se but chalo accha hua.</p>
+        <p> Woh alag baat h ki aap aadhe time Rishikesh bhaag jaati thi, uski shikayat toh h hmme, ek Kalpataru toh saath rehte yaar. Haa maana Aiims jaisa nhi tha fest but phir bhi apn toh mazza krte.
+        Waise maine pehle bhi bola h, abh phirse bolungi "Bhai hmara khud ka paparazzi h koi mazak h kya" . Jokes apart, jo bolna chahti hu, woh ye h ki bahut radiant person ho tm, jidhar jaati ho udhar hi mahol bn jaata h...hmesa aisi hi rehna at the same time never stop being bakchod aur haa jbh government officer bnna toh black money se Bali trip kra Dena.....chinta 
+        mt kr agr nhi bhi hua toh saath mei mazdoori karenge corporate k liye....aur uski bhi bitching session rakh lenge. And also the most important part panic km kiya karo, trust me things will work out, wo alag baat h ki meri bhi phati huyi h. </p>
+        <p>Love, </p>
+        <p>Akanksha
+      </p>
+    </div>
+  </section>
+
+  <!-- â–‘â–‘â–‘ KUN'S MASONRY GALLERY â–‘â–‘â–‘ -->
+  <section class="masonry-section" style="padding-top: 2rem;">
+    <div class="section-header reveal">
+      <span class="section-label">The Story in Photos</span>
+      <span class="section-rule"></span>
+    </div>
+
+    <div class="masonry-grid" id="kun-masonry"></div>
+
+    <div class="empty-state" id="kun-empty" style="display:none;">
+      <div class="empty-state-title"></div>
+      <p>Add photos to <strong>data.js</strong> with <code>person: "kun"</code></p>
+      <span class="empty-state-code">{ id: "FILE_ID", type: "image", person: "kun", date: "YYYY-MM-DD", ... }</span>
+    </div>
+  </section>
+
+  <!-- â–‘â–‘â–‘ FOOTER â–‘â–‘â–‘ -->
+  <footer class="site-footer">
+    <span class="footer-brand">chuku.memories</span>
+    <p>Made with love &nbsp;·&nbsp; <a href="index.html" style="color:var(--forest-mid);text-decoration:none;"> Back to Home</a></p>
+  </footer>
+
+  <!-- â–‘â–‘â–‘ LIGHTBOX â–‘â–‘â–‘ -->
+  <div class="lightbox-overlay" id="lightbox" role="dialog" aria-modal="true">
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightbox-close" aria-label="Close">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <img id="lightbox-img" src="" alt="Memory" />
+      <div class="lightbox-caption" id="lightbox-caption"></div>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="world.js"></script>
+  <script>initWorldPage('kun');</script>
+
+</body>
+</html>
+
+
